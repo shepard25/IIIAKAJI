@@ -6,6 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IIIAKAJI - Video Compression Tool for Content Creators</title>
+  <script data-goatcounter="https://shepard25.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
@@ -1457,7 +1458,6 @@
     .cta-button-icon {
       width: 2rem;
       height: 2rem;
-      animation: spin 10s linear infinite;
     }
 
     @media (min-width: 768px) {
@@ -1480,6 +1480,154 @@
       line-height: 2;
     }
 
+    .cta-content-layer {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .cta-marquee-container {
+      position: absolute;
+      width: 120%;
+      left: -10%;
+      bottom: 18%;
+      background: #f425f4;
+      border-top: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(-3deg);
+      padding: 0.6rem 0;
+      overflow: hidden;
+      opacity: 0.9;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .cta-marquee-content {
+      display: flex;
+      width: max-content;
+      animation: ctaMarqueeScroll 20s linear infinite;
+    }
+
+    .cta-marquee-item {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: clamp(1rem, 2.8vw, 1.8rem);
+      color: #000;
+      text-transform: uppercase;
+      white-space: nowrap;
+      padding: 0 1.5rem;
+      letter-spacing: 0.04em;
+    }
+
+    @keyframes ctaMarqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .cta-actions {
+      width: 100%;
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .cta-link-card {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+      padding: 1.2rem 1.4rem;
+      border-radius: 0.9rem;
+      border: 1px solid rgba(244, 37, 244, 0.35);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(244, 37, 244, 0.12), transparent 45%),
+        radial-gradient(circle at 90% 100%, rgba(204, 255, 0, 0.08), transparent 40%),
+        rgba(10, 10, 10, 0.92);
+      color: #fff;
+      text-decoration: none;
+      text-align: left;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+      z-index: 2;
+    }
+
+    .cta-link-card:hover {
+      transform: translateY(-2px);
+      border-color: #f425f4;
+      box-shadow: 0 10px 30px rgba(244, 37, 244, 0.35);
+      filter: brightness(1.05);
+    }
+
+    .cta-link-card.cta-link-youtube:hover {
+      border-color: #ef4444;
+    }
+
+    .cta-link-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cta-link-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .cta-link-icon-github {
+      background: #fff;
+      color: #000;
+    }
+
+    .cta-link-icon-youtube {
+      background: #dc2626;
+      color: #fff;
+    }
+
+    .cta-link-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .cta-link-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.45);
+      text-transform: uppercase;
+    }
+
+    .cta-link-title {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      transition: color 0.25s ease;
+      line-height: 1.1;
+    }
+
+    @media (max-width: 768px) {
+      .cta-link-title {
+        font-size: 1.6rem;
+      }
+    }
+
+    .cta-link-card.cta-link-github:hover .cta-link-title {
+      color: #ccff00;
+    }
+
+    .cta-link-card.cta-link-youtube:hover .cta-link-title {
+      color: #ef4444;
+    }
     /* ===== FOOTER ===== */
     .footer {
       background: #000;
@@ -1937,6 +2085,17 @@
 
     <!-- CTA SECTION -->
     <section class="full-section" id="section4">
+      
+          <div class="cta-marquee-container" aria-hidden="true">
+            <div class="cta-marquee-content">
+              <div class="cta-marquee-item">COMPRESS. IIIAKAJI. JOY. REPEAT. //</div>
+              <div class="cta-marquee-item">COMPRESS. CALL YOUR PARENTS. UPLOAD. REPEAT. //</div>
+              <div class="cta-marquee-item">COMPRESS. SHAKAL. SUBSCRIBE. REPEAT. //</div>
+              <div class="cta-marquee-item">DRINK WATER. IIIAKAJI. SHARE. REPEAT. //</div>
+              <div class="cta-marquee-item">COMPRESS. SHAKAL. UPLOAD. SMILE. //</div>
+              <div class="cta-marquee-item">COMPRESS. IIIAKAJI. DO PUSHUPS. REPEAT. //</div>
+            </div>
+          </div>
       <div class="container" style="max-width: 900px;">
         <div class="cta-container holographic reveal-scale">
           <div class="cta-corner cta-corner-tl"></div>
@@ -1944,23 +2103,50 @@
           <div class="cta-corner cta-corner-bl"></div>
           <div class="cta-corner cta-corner-br"></div>
           
-          <div class="cta-badge">DOWNLOAD_AVAILABLE</div>
-          
-          <h2 class="cta-title">
-            READY TO <span class="cta-title-accent">DOWNLOAD</span><br>IIIKAJI?
-          </h2>
+          <div class="cta-content-layer">
+            <h2 class="cta-title">
+              JOIN THE <span class="cta-title-accent">RESISTANCE</span>
+            </h2>
 
-          <button class="cta-button">
-            <span class="cta-button-glow"></span>
-            <svg class="cta-button-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-            </svg>
-            [ DOWNLOAD ]
-          </button>
+            <div class="cta-actions">
+              <a 
+                id="ctaGithubBtn"
+                data-goatcounter-click="click github"
+                class="cta-link-card cta-link-github" href="https://github.com/shepard25/IIIAKAJI/releases/latest" target="_blank" rel="noopener noreferrer"
+              >
+                <div class="cta-link-icon cta-link-icon-github">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+                  </svg>
+                </div>
+                <div class="cta-link-text">
+                  <div class="cta-link-label">OPEN SOURCE</div>
+                  <div class="cta-link-title">Star on GitHub</div>
+                </div>
+              </a>
 
-          <p class="cta-disclaimer">
-            Subscribe to YouTube, subscribe to GitHub, and download IIIAKAJI to start compressing your videos today.
-          </p>
+              <a id="ctaYoutubeBtn" 
+                class="cta-link-card cta-link-youtube" 
+                href="https://www.youtube.com/channel/UCtloffsYuLIX8DZYpBY8a5Q" target="_blank" rel="noopener noreferrer"
+                data-goatcounter-click="click youtube"
+              >
+                <div class="cta-link-icon cta-link-icon-youtube">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.33 29 29 0 00-.46-5.33z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 15.02l5.75-3.27-5.75-3.27v6.54z" />
+                  </svg>
+                </div>
+                <div class="cta-link-text">
+                  <div class="cta-link-label">DEVLOGS</div>
+                  <div class="cta-link-title">Watch on YouTube</div>
+                </div>
+              </a>
+            </div>
+
+            <p class="cta-disclaimer">
+              Download the latest build from GitHub Releases and subscribe on YouTube for updates, demos, and new workflow drops.
+            </p>
+          </div>
           
           <div class="circuit-lines" style="position: absolute; inset: 0; pointer-events: none; opacity: 0.5;"></div>
         </div>
@@ -2298,3 +2484,4 @@
   </script>
 </body>
 </html>
+
